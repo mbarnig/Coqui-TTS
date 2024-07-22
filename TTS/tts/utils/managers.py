@@ -13,6 +13,7 @@ from huggingface_hub import hf_hub_download
 
 
 def load_file(path: str):
+    # Workarounds added by Marco Barnig in this function to make the inference of the Coqui TTS VITS Multispeaker Model inference working on HugginFace
     print("***** path ? ***** : " +str(path))
     REPO_ID = "mbarnig/MULTI_LOD_TTS"
     if path.endswith(".json"):
