@@ -9,6 +9,7 @@ import torch
 from TTS.config import load_config
 from TTS.encoder.utils.generic_utils import setup_encoder_model
 from TTS.utils.audio import AudioProcessor
+from huggingface_hub import hf_hub_download
 
 
 def load_file(path: str):
@@ -23,6 +24,7 @@ def load_file(path: str):
     elif path.endswith(".pth"):
         # if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\speakers.pth":
         print("*** this is the pth path **** : " + str(path))
+        speakers_path = hf_hub_download(repo_id=REPO_ID, filename="speakers.pth")
         path = speakers_path
         print("*** this is the speakers-path **** : " + str(path))
         with fsspec.open(path, "rb") as f:
