@@ -12,6 +12,7 @@ from TTS.utils.audio import AudioProcessor
 
 
 def load_file(path: str):
+    print("***** path ? ***** : " +str(path))
     if path.endswith(".json"):
         if path == "/home/user/app/D:\\MULTI-LOD\\output\\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\\language_ids.json":
             print("*** this is the JSON path **** : " + str(path))
