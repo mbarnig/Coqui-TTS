@@ -24,6 +24,7 @@ def load_file(path: str):
     elif path.endswith(".pth"):
         # if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\speakers.pth":
         print("*** this is the pth path **** : " + str(path))
+        REPO_ID = "mbarnig/MULTI_LOD_TTS"
         speakers_path = hf_hub_download(repo_id=REPO_ID, filename="speakers.pth")
         path = speakers_path
         print("*** this is the speakers-path **** : " + str(path))
