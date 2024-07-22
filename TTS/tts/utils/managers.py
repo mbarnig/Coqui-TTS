@@ -14,17 +14,17 @@ from TTS.utils.audio import AudioProcessor
 def load_file(path: str):
     print("***** path ? ***** : " +str(path))
     if path.endswith(".json"):
-        if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\language_ids.json":
-            print("*** this is the JSON path **** : " + str(path))
-            path = languages_path
-            print("*** this is the language-path **** : " + str(path))
+        # if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\language_ids.json":
+        print("*** this is the JSON path **** : " + str(path))
+        path = languages_path
+        print("*** this is the language-path **** : " + str(path))
         with fsspec.open(path, "rb") as f:
             return json.load(f)
     elif path.endswith(".pth"):
-        if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\speakers.pth":
-            print("*** this is the pth path **** : " + str(path))
-            path = speakers_path
-            print("*** this is the speakers-path **** : " + str(path))
+        # if path == "D:\MULTI-LOD\output\vits_multilingual-lod-July-08-2024_12+24PM-dbf1a08a\speakers.pth":
+        print("*** this is the pth path **** : " + str(path))
+        path = speakers_path
+        print("*** this is the speakers-path **** : " + str(path))
         with fsspec.open(path, "rb") as f:
             return torch.load(f, map_location="cpu")
     else:
